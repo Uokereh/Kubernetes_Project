@@ -2,7 +2,8 @@ pipeline {
 
     agent any
 
-    stage('Git Checkout'){
+    stages {
+        stage('Git Checkout'){
         git 'https://github.com/Uokereh/Kubernetes_Project.git'
     }
 
@@ -55,5 +56,7 @@ pipeline {
              sh 'ssh -o StrictHostKeyChecking=node ubuntu@172.31.81.4 ansible-playbook ansible.yml' 
          }
      }
+    }
+
 
 }
