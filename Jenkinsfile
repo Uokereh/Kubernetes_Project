@@ -1,4 +1,6 @@
-node {
+pipeline {
+
+    agent any
 
     stage('Git Checkout'){
         git 'https://github.com/Uokereh/Kubernetes_Project.git'
@@ -42,8 +44,8 @@ node {
 
      stage('Copy Files From Ansible to Kubernetes Server'){
          sshagent(['kubernetes_server']){
-             sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.30.253' #YOUR-KUBERNETES-SERVER-IP-ADDRESS
-             sh 'scp /var/lib/jenkins/workspace/pipeline-demo/* ubuntu@172.31.30.253:/home/ubuntu/' #YOUR-KUBERNETES-SERVER-IP-ADDRESS
+             sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.19.112' #YOUR-KUBERNETES-SERVER-IP-ADDRESS
+             sh 'scp /var/lib/jenkins/workspace/pipeline-demo/* ubuntu@172.31.19.112:/home/ubuntu/' #YOUR-KUBERNETES-SERVER-IP-ADDRESS
          }
      }
 
