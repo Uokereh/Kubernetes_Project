@@ -48,7 +48,7 @@ node {
      }
 
      stage('Kubernetes Deployment using Ansible'){
-         sshagent(['kubernetes_server']){
+         sshagent(['ansible_demo']){
              sh 'ssh -o StrictHostKeyChecking=node ubuntu@172.31.81.4 cd /home/ubuntu/' 
              sh 'ssh -o StrictHostKeyChecking=node ubuntu@172.31.81.4 ansible-playbook ansible.yml' 
          }
