@@ -9,7 +9,7 @@ RUN yum install -y httpd \
 ADD https://freehtml5.co/download/?item=multipurpose-free-fully-responsive-website-template-with-cta /var/www/html/
 WORKDIR /var/www/html/
 # RUN unzip photogenic.zip
-RUN cp -rvf multipurpose/* .
+RUN cp -rvf multipurpose-free-fully-responsive-website-template-with-cta/* .
 # RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80 22
