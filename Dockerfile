@@ -6,11 +6,11 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum install -y httpd \
  zip\
  unzip
-ADD https://freehtml5.co/download/?item=multipurpose-free-fully-responsive-website-template-with-cta /var/www/html/
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page277/blueneek.zip /var/www/html/
 WORKDIR /var/www/html/
-# RUN unzip photogenic.zip
-RUN cp -rvf multipurpose-free-fully-responsive-website-template-with-cta/* .
-# RUN rm -rf photogenic photogenic.zip
+RUN unzip blueneek.zip 
+RUN cp -rvf blueneek/* .
+RUN rm -rf blueneek blueneek.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80 22
 
