@@ -4,7 +4,7 @@ node {
         git 'https://github.com/Uokereh/Kubernetes_Project.git'
     }
 
-    stage('Send Docker file to Ansible Server over SSH'){
+    stage('Send Dockerfile to Ansible Server over SSH'){
         sshagent(['ansible_demo']){
             sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.81.4' 
             sh 'scp /var/lib/jenkins/workspace/pipeline-demo-1/* ubuntu@172.31.81.4:/home/ubuntu/' 
